@@ -78,9 +78,3 @@ Over Bluetooth the trackpad reports `045e:0040` and declares only a keyboard, a 
 The device also has touch-style reports (`04`, plus features `02`, `03`, `05` and `06`) that it doesn't declare. Report `04` stayed silent in every test, and writes to features `03` and `05` failed with an I/O error. Patching the descriptor can't help, because no finger data arrives.
 
 Don't write to the vendor service `f000ffc0-...` while experimenting. It looks like TI's over-the-air firmware update service.
-
-## Help with testing
-
-Please open an issue if you've tried this on another distro or kernel, or checked anything listed as untested above.
-
-A udev rule that rebinds only this device would remove the side effect on Apple devices. The repo doesn't have one yet. The KB96 reports no USB manufacturer string, which a rule could match on.
